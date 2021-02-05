@@ -12,11 +12,10 @@ const isNumber = function name(number) {
 
 
 //функция генерирует случайное целое число от MIN до MAX
-const randomInteger = (MIN, MAX) => {
-    // const MIN = 1;
-    // const MAX = 100;
-    let result = Math.floor((MAX * Math.random()) + MIN);
-    return result;
+// const MIN = 0;
+// const MAX = 100;
+const getRandomInt = (MIN, MAX) => {
+    return Math.floor(Math.random() * (MAX - MIN)) + MIN; //Максимум не включается, минимум включается
 };
 
 
@@ -24,7 +23,7 @@ const randomInteger = (MIN, MAX) => {
 
 const main = function() {
 
-    const seed = randomInteger(1, 100); //генерим загаданое число - это сохранится в замыкании функции
+    const seed = getRandomInt(0, 100); //генерим загаданое число - это сохранится в замыкании функции
 
     const next = function() {
         let ans = prompt('Угадай число от 1 до 100');
